@@ -77,6 +77,8 @@
             point.style.animation = `blink ${randomAnimationDuration}s infinite`;
             action.style.top = randomTopPercentage + '%';
             action.style.left = randomLeftPercentage + '%';
+            point.style.top = randomTopPercentage + '%';
+            point.style.left = randomLeftPercentage + '%';
             action.appendChild(point);
             mask.appendChild(action);
         })
