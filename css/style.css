@@ -42,6 +42,7 @@ html{
     --space-6: 3rem;
     background-color: var(--dark-color);
     scroll-behavior: smooth;
+    font-size: 16px;
 }
 html, body{
     font-family: 'Questrial', sans-serif;
