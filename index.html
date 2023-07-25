@@ -39,7 +39,7 @@
             <h1 class="hero__title">Luna Muerta</h1>
             <p class="hero__subtitle">Manuel Palau</p>
             <p class="hero__text">
-                <a class="link" href="http://marmorasoprano.com" target="_blank" rel="noopener noreferrer" title="Link to Mar Morán site">Mar Morán</a> 
+                <a class="link" href="http://marmoransoprano.com" target="_blank" rel="noopener noreferrer" title="Link to Mar Morán site">Mar Morán</a> 
                 & 
                 <a class="link" href="https://www.aurelioviribay.com/" target="_blank" rel="noopener noreferrer" title="Link to Mar Morán site">Aurelio Viribay</a> 
             </p>
@@ -61,7 +61,7 @@
      function generateStarts() {
         const mask = document.querySelector('.mask');
         songs.map((song, index) => {
-            const point = document.createElement('div');
+            const point = document.createElement('span');
             point.classList.add('point');
             point.id=`point${index}`;
             point.setAttribute('onclick', `showSong(${index}, 'point${index}')`);
