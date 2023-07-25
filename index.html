@@ -61,7 +61,7 @@
      function generateStarts() {
         const mask = document.querySelector('.mask');
         songs.map((song, index) => {
-            const point = document.createElement('span');
+            const point = document.createElement('div');
             point.classList.add('point');
             point.id=`point${index}`;
             point.setAttribute('onclick', `showSong(${index}, 'point${index}')`);
