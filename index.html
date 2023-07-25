@@ -65,18 +65,20 @@
      function generateStarts() {
         const mask = document.querySelector('.mask');
         songs.map((song, index) => {
+            const action = document.createElement('div');
             const point = document.createElement('span');
+            action.classList.add('action');
             point.classList.add('point');
             point.id=`point${index}`;
-            point.setAttribute('onclick', `showSong(${index}, 'point${index}')`);
-            const randomAnimationDuration = Math.random() * 5;
+            action.setAttribute('onclick', `showSong(${index}, 'point${index}')`);
+            const randomAnimationDuration = 3 + Math.random() * 3;
             const randomTopPercentage = Math.random() * 100;
             const randomLeftPercentage = Math.random() < 0.5 ? Math.random() * 30 : 60 + Math.random() * 30;
             point.style.animation = `blink ${randomAnimationDuration}s infinite`;
-            point.style.top = randomTopPercentage + '%';
-            point.style.left = randomLeftPercentage + '%';
-
-            mask.appendChild(point);
+            action.style.top = randomTopPercentage + '%';
+            action.style.left = randomLeftPercentage + '%';
+            action.appendChild(point);
+            mask.appendChild(action);
         })
      };
      function showSong(index, id) {
