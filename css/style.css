@@ -84,8 +84,8 @@ html, body{
   }
   
   .point {
-    width: 4px;
-    height: 4px;
+    width: 6px;
+    height: 6px;
     background-color: var(--light-color);
     border-radius: 50%;
     cursor: pointer;
