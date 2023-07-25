@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>"Luna Muerta" - Canciones de Manuel Palau - Mar Morán & Aurelio Viribay</title>
+    <meta name="title" content='"Luna Muerta" - Canciones de Manuel Palau - Mar Morán & Aurelio Viribay'>
+    <meta name="description" content="Presentamos el próximo disco, Luna Muerta de la soprano Mar Morán y el pianista Aurelio Viribay dedicado al compositor valenciano Manuel Palau">
+    <meta name="keywords" content="Manuel Palau, Mar Morán, Aurelio Viribay, Canción Española, Spanish Songs, Soprano, Pianista, musica Clásica, Clasical Music, Disco, canción">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="Spanish">
+    <meta name="author" content="Gomar producciones">
+    <meta itemprop="name" content='"Luna Muerta" - Canciones de Manuel Palau - Mar Morán & Aurelio Viribay'>
+    <meta itemprop="description" content="Presentamos el próximo disco, Luna Muerta de la soprano Mar Morán y el pianista Aurelio Viribay dedicado al compositor valenciano Manuel Palau">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content='"Luna Muerta" - Canciones de Manuel Palau - Mar Morán & Aurelio Viribay'>
+    <meta name="twitter:description" content="Presentamos el próximo disco, Luna Muerta de la soprano Mar Morán y el pianista Aurelio Viribay dedicado al compositor valenciano Manuel Palau">
+    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+    <meta name="og:title" content=""Luna Muerta" - Canciones de Manuel Palau - Mar Morán & Aurelio Viribay">
+    <meta name="og:description" content="Presentamos el próximo disco, Luna Muerta de la soprano Mar Morán y el pianista Aurelio Viribay dedicado al compositor valenciano Manuel Palau">
+    <meta name="og:url" content="www.lunamuerta.com">
+    <meta name="og:site_name" content='"Luna Muerta" - Canciones de Manuel Palau - Mar Morán & Aurelio Viribay'>
+    <meta name="og:locale" content="es_ES">
+    <meta name="og:type" content="website">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="preload" href="./css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="./css/style.css"></noscript>    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+</head>
+<body>
+    <section class="hero">
+        <div class="mask">
+        </div>
+        <div class="hero__container">
+            <h1 class="hero__title">Luna Muerta</h1>
+            <p class="hero__subtitle">Manuel Palau</p>
+            <p class="hero__text">
+                <a class="link" href="http://marmorasoprano.com" target="_blank" rel="noopener noreferrer" title="Link to Mar Morán site">Mar Morán</a> 
+                & 
+                <a class="link" href="https://www.aurelioviribay.com/" target="_blank" rel="noopener noreferrer" title="Link to Mar Morán site">Aurelio Viribay</a> 
+            </p>
+        </div>
+        <a href="#about" title="Enlace a la seción 2 de la página" class="arrow-container">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#ffff">
+                <path d="M12 15.5l-8-8-1.5 1.5 9.5 9.5 9.5-9.5-1.5-1.5z"/>
+            </svg>
+        </a>
+    </section>
+    <section class="about" id="about">
+        <h1 class="about__title">Sobre el proyecto</h1>
+    </section>
+</body>
+</html>
+<script>
+    const songs =  ["Luna Muerta", "La Palmera", "¿Que sentís, corazón mio?","Arroyuelo del molino", "Villancico","Chiquilla",  "Por el montecico sola", "Gritos daba la morenica...","Mal ferida iba la garza", "La flor de la villa", "¿Con qué la lavaré?", "De los álamos vengo, Madre", "Imperceptile", "Noria vieja", "Lluvia", "Caracolera", "Farsa", "Farol", "Elegia al caballero del olmedo", "Tonadilla", "Chove", "La virgen va caminando", "Partida"]
+    const ciclosOfSongs = [{title:"Dos canciones amatorias", songs:["No me habléis, Conde (I)", "Ya no más(II)"]}, {title:"Del oriente lejano", songs:["Improvisación (I)", "Lírica japonesa(II)"]}, {title:"Dos Lieder", songs: ["Avila(I)", "Montesa(II)"]}]
+     function generateStarts() {
+        const mask = document.querySelector('.mask');
+        songs.map((song, index) => {
+            const point = document.createElement('span');
+            point.classList.add('point');
+            point.id=`point${index}`;
+            point.setAttribute('onclick', `showSong(${index}, 'point${index}')`);
+            const randomAnimationDuration = Math.random() * 5;
+            const randomTopPercentage = Math.random() * 100;
+            const randomLeftPercentage = Math.random() < 0.5 ? Math.random() * 30 : 60 + Math.random() * 30;
+            point.style.animation = `blink ${randomAnimationDuration}s infinite`;
+            point.style.top = randomTopPercentage + '%';
+            point.style.left = randomLeftPercentage + '%';
+
+            mask.appendChild(point);
+        })
+     };
+     function showSong(index, id) {
+      const myPoint = document.getElementById(id);
+      myPoint.classList.remove('point')
+      myPoint.classList.add('point_text__show');
+      myPoint.textContent = `"${songs[index]}"`;
+      setTimeout(function() {
+        myPoint.textContent = '';
+        myPoint.classList.remove('point_text__show');
+        myPoint.classList.add('point')
+      }, 5000);
+    }
+    generateStarts();
+</script>

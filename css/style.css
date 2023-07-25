@@ -1,0 +1,150 @@
+h1, h2, h3, h4, h5, h6, p{
+    margin: 5px;
+    padding: 0;
+}
+section{
+    height: 100vh;
+}
+html{
+    --main-color: #1B262C;
+    --secondary-color: #0F4C75;
+    --tertiary-color: #3282B8;
+    --light-color: #bbbbbb;
+    --dark-color: #000000;
+    
+    /* fontSizes variables */
+    --font-size-1: 1.2rem;
+    --font-size-2: 1.4rem;
+    --font-size-3: 1.6rem;
+    --font-size-4: 1.8rem;
+    --font-size-5: 2rem;
+    --font-size-6: 2.2rem;
+    /* margins variables */
+    --margin-1: 0.5rem;
+    --margin-2: 1rem;
+    --margin-3: 1.5rem;
+    --margin-4: 2rem;
+    --margin-5: 2.5rem;
+    --margin-6: 3rem;
+    /* paddings variables */
+    --padding-1: 0.5rem;
+    --padding-2: 1rem;
+    --padding-3: 1.5rem;
+    --padding-4: 2rem;
+    --padding-5: 2.5rem;
+    --padding-6: 3rem;
+    /* spaces variables */
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2rem;
+    --space-5: 2.5rem;
+    --space-6: 3rem;
+    background-color: var(--dark-color);
+    scroll-behavior: smooth;
+}
+html, body{
+    font-family: 'Questrial', sans-serif;
+    font-size: var(--font-size-3);
+    color: var(--light-color);
+    margin: 0;
+    padding: 0;
+}
+.hero{
+    background-image: url(../img/hero.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.hero::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.3);
+}  
+.hero__container{
+    position: absolute;
+    top:50%;
+    left: 5%;
+    z-index: 1;
+}
+.hero__text{
+    font-size: var(--font-size-1);
+}
+.mask {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border-radius: 5px;
+  }
+  
+  .point {
+    width: 4px;
+    height: 4px;
+    background-color: var(--light-color);
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    animation: blink 5s infinite; /* Aplicamos la animación "blink" a los puntos */
+  }
+  .point:hover{
+    background-color: var(--tertiary-color);
+  }
+  .point_text__show{
+    background-color: transparent;
+    font-size: 14px;
+    width: 20%;
+    position: absolute;
+    z-index: 1;
+  }
+  .link{
+    color: var(--light-color);
+    text-decoration: none;
+  }
+  .link:hover{
+    color: var(--tertiary-color);
+  }
+@keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.2;
+    }
+  }
+  .arrow-container {
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    animation: bounce 2s infinite;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .arrow-container:hover svg{
+    fill: var(--tertiary-color);
+  }
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+  }
+  .about{
+    text-align: center;
+    padding: 2rem;
+  }
+  .about__title{
+    font-size: var(--font-size-5);
+    margin-bottom: var(--margin-2);
+  }
+  .about__container{
+    max-width: 1080px;
+  }
